@@ -6,7 +6,7 @@
 	$id = 0;
 	$firstName = "";
 	$lastName = "";
-
+	//replace with your own database credentials
 	$conn = new mysqli("localhost", "YOUR_DB_USER", "YOUR_DB_PASSWORD", "YOUR_DB_NAME");
 
 	if( $conn->connect_error )
