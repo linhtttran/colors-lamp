@@ -46,7 +46,7 @@ body {
 .buttons:hover {
     background-color: rgb(0 213 18 / 31%);
     color: #fff;
-    opacity: 50%;
+    opacity: 0.5;
 }
 
 #login-name {
