@@ -2,4 +2,5 @@
   "lint:html": "htmlhint **/*.html",
   "lint:css": "stylelint **/*.css",
   "lint:js": "eslint **/*.js"
+  "type": "module"
 }
