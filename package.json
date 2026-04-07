@@ -3,11 +3,10 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-  "lint:html": "htmlhint **/*.html",
-  "lint:css": "stylelint **/*.css",
-  "lint:js": "eslint **/*.js"
-}
-
+    "lint:html": "htmlhint **/*.html",
+    "lint:css": "stylelint **/*.css",
+    "lint:js": "eslint **/*.js"
+  },
   "devDependencies": {
     "htmlhint": "^1.1.4",
     "stylelint": "^16.0.0",
