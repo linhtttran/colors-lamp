@@ -1,5 +1,3 @@
-const fetch = require("node-fetch");
-
 const BASE_URL = process.env.APP_URL || "http://localhost/colors-app";
 
 test("GET /api/colors.php returns 200", async () => {
