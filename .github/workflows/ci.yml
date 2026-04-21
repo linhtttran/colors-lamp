@@ -46,10 +46,12 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.1'
-      - name: Start PHP server
+          extensions: mysqli
+      - name: Validate PHP syntax
         run: |
-          php -S localhost:8080 -t . &
-          sleep 2
+          php -l api/Login.php
+          php -l api/AddColor.php
+          php -l api/SearchColors.php
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -58,5 +60,4 @@ jobs:
         run: npm install
       - name: Run integration tests
         run: npx jest tests/api.test.js --verbose
-        env:
-          APP_URL: http://localhost:8080          
+        
