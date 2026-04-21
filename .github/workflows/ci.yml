@@ -59,5 +59,4 @@ jobs:
       - name: Run integration tests
         run: npx jest tests/api.test.js --verbose
         env:
-          APP_URL: http://COP4331-5.com/LAMPAPI
-          
+          APP_URL: http://localhost:8080          
