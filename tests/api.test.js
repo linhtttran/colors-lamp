@@ -1,4 +1,4 @@
-const BASE_URL = process.env.APP_URL || "http://localhost/colors-app";
+const BASE_URL = process.env.APP_URL || "http://localhost:8080";
 
 test("GET /api/colors.php returns 200", async () => {
   const res = await fetch(`${BASE_URL}/api/colors.php`);
