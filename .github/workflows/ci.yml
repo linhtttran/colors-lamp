@@ -1,0 +1,63 @@
+name: Lint and Test CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm install
+      - name: Lint HTML
+        run: npm run lint:html
+      - name: Lint CSS
+        run: npm run lint:css
+      - name: Lint JavaScript
+        run: npm run lint:js
+
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm install
+      - name: Run unit tests
+        run: npx jest tests/colorUtils.test.js --verbose
+
+  integration-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+      - name: Start PHP server
+        run: |
+          php -S localhost:8080 -t . &
+          sleep 2
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm install
+      - name: Run integration tests
+        run: npx jest tests/api.test.js --verbose
+        env:
+          APP_URL: http://localhost:8080
+          
