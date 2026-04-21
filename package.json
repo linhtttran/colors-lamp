@@ -1,17 +1,22 @@
 {
   "name": "colors-app",
   "version": "1.0.0",
-  "type": "module",
   "scripts": {
     "lint:html": "htmlhint **/*.html",
     "lint:css": "stylelint **/*.css",
-    "lint:js": "eslint **/*.js"
+    "lint:js": "eslint **/*.js",
+    "test": "jest"
   },
   "devDependencies": {
     "htmlhint": "^1.1.4",
     "stylelint": "^16.0.0",
     "stylelint-config-standard": "^36.0.0",
     "eslint": "^9.0.0",
-    "@eslint/js": "^9.0.0"
+    "@eslint/js": "^9.0.0",
+    "jest": "^29.0.0",
+    "node-fetch": "^2.7.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }
